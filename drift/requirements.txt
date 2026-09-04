@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+
+opendrift
+numpy
+pandas
+xarray
+netCDF4
+scipy
+shapely
+geopandas
+pyproj
+PyYAML
+pytest
