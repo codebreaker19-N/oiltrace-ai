@@ -1,0 +1,8 @@
+{
+  "event_id": "spill_demo_001",
+  "detection_time": "2026-08-20T10:00:00Z",
+  "centroid": {
+    "lat": 19.245,
+    "lon": 72.821
+  }
+}
