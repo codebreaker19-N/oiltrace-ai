@@ -1,0 +1,21 @@
+{
+  "event_id": "spill_demo_001",
+  "detection": {
+    "latitude": 19.245,
+    "longitude": 72.821,
+    "time": "2026-08-20T10:00:00+00:00"
+  },
+  "simulation": {
+    "duration_hours": 72,
+    "particles": 100,
+    "status": "demo"
+  },
+  "source_region": {
+    "center": {
+      "latitude": 19.14475,
+      "longitude": 72.72075
+    },
+    "radius_km": 15.2,
+    "particle_count": 100
+  }
+}
