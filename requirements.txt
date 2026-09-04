@@ -12,3 +12,4 @@ shapely
 geopandas
 pyproj
 PyYAML
+pytest
