@@ -17,5 +17,6 @@
     },
     "radius_km": 15.2,
     "particle_count": 100
+    "confidence": 0.78
   }
 }
