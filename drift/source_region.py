@@ -31,7 +31,8 @@ def haversine_distance_km(lat1, lon1, lat2, lon2):
 
 def estimate_source_region(positions):
     """
-    Estimate the center and spread of a probable source region.
+    Estimate the center, spread, and confidence of a probable
+    source region.
 
     Parameters
     ----------
@@ -41,7 +42,8 @@ def estimate_source_region(positions):
     Returns
     -------
     dict
-        Estimated source center and radius.
+        Estimated source center, radius, particle count,
+        and confidence.
     """
 
     if not positions:
@@ -65,6 +67,8 @@ def estimate_source_region(positions):
 
     radius_km = max(distances) if distances else 0.0
 
+    confidence = 1.0 / (1.0 + radius_km / 10.0)
+
     return {
         "center": {
             "latitude": center_lat,
@@ -72,4 +76,5 @@ def estimate_source_region(positions):
         },
         "radius_km": radius_km,
         "particle_count": len(positions),
+        "confidence": round(confidence, 3),
     }
