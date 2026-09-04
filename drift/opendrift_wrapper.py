@@ -1,8 +1,9 @@
 """
 Wrapper around OpenDrift for oil-spill trajectory simulations.
 
-This module keeps OpenDrift-specific implementation separate from
-the rest of the drift pipeline.
+This module currently provides a demo trajectory generator.
+The demo implementation will later be replaced with a real
+OpenDrift simulation using environmental forcing data.
 """
 
 from datetime import datetime, timedelta
@@ -22,27 +23,7 @@ class DriftModel:
         duration_hours=72,
         particles=100,
     ):
-        """
-        Run a backward oil-spill trajectory simulation.
-
-        Parameters
-        ----------
-        latitude : float
-            Spill detection latitude.
-        longitude : float
-            Spill detection longitude.
-        start_time : datetime
-            Time when the spill was detected.
-        duration_hours : int
-            Number of hours to backtrack.
-        particles : int
-            Number of particles in the ensemble.
-
-        Returns
-        -------
-        dict
-            Simulation metadata and trajectory results.
-        """
+        """Run a backward oil-spill trajectory simulation."""
 
         if not -90 <= latitude <= 90:
             raise ValueError("Latitude must be between -90 and 90.")
@@ -63,6 +44,19 @@ class DriftModel:
 
         end_time = start_time - timedelta(hours=duration_hours)
 
+        trajectories = []
+
+        for particle_id in range(particles):
+            offset = (particle_id - particles / 2) * 0.0005
+
+            trajectories.append(
+                {
+                    "particle_id": particle_id + 1,
+                    "latitude": latitude - 0.1 + offset,
+                    "longitude": longitude - 0.1 + offset,
+                }
+            )
+
         return {
             "start_location": {
                 "latitude": latitude,
@@ -72,6 +66,6 @@ class DriftModel:
             "backtrack_start_time": end_time.isoformat(),
             "duration_hours": duration_hours,
             "particles": particles,
-            "status": "initialized",
-            "trajectories": [],
+            "status": "demo",
+            "trajectories": trajectories,
         }
