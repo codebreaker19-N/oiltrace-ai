@@ -6,9 +6,10 @@ This script connects:
 2. Event validation
 3. Backward drift ensemble
 4. Source-region estimation
+5. Result export
 """
 
-from drift.io_utils import load_event, validate_event
+from drift.io_utils import load_event, validate_event, save_result
 from drift.opendrift_wrapper import DriftModel
 from drift.backtrack_ensemble import BacktrackEnsemble
 
@@ -38,8 +39,14 @@ def run_demo(event_path):
 
 
 if __name__ == "__main__":
-    result = run_demo(
-        "data/processed/demo_spill_event.json"
+    event_path = "data/processed/demo_spill_event.json"
+    output_path = "data/processed/demo_drift_result.json"
+
+    result = run_demo(event_path)
+
+    save_result(
+        result,
+        output_path,
     )
 
     print("Oil Spill Drift Demo")
@@ -62,3 +69,17 @@ if __name__ == "__main__":
         f"Status: "
         f"{result['simulation']['status']}"
     )
+
+    if result["source_region"]:
+        center = result["source_region"]["center"]
+
+        print(
+            f"Estimated source region: "
+            f"{center['latitude']}, "
+            f"{center['longitude']}"
+        )
+
+        print(
+            f"Source region radius: "
+            f"{result['source_region']['radius_km']:.2f} km"
+        )
