@@ -7,6 +7,8 @@ and prepares their results for source-region estimation.
 
 from datetime import datetime
 
+from drift.source_region import estimate_source_region
+
 
 class BacktrackEnsemble:
     """Run and manage an ensemble of backward drift simulations."""
@@ -26,26 +28,6 @@ class BacktrackEnsemble:
     ):
         """
         Run a backward trajectory ensemble.
-
-        Parameters
-        ----------
-        event_id : str
-            Unique identifier for the spill event.
-        latitude : float
-            Spill detection latitude.
-        longitude : float
-            Spill detection longitude.
-        detection_time : datetime or str
-            Time when the spill was detected.
-        duration_hours : int
-            Number of hours to backtrack.
-        particles : int
-            Number of particles in the ensemble.
-
-        Returns
-        -------
-        dict
-            Ensemble simulation results.
         """
 
         if not event_id:
@@ -64,6 +46,20 @@ class BacktrackEnsemble:
             particles=particles,
         )
 
+        trajectories = result.get("trajectories", [])
+
+        source_region = None
+
+        if trajectories:
+            positions = [
+                (point["latitude"], point["longitude"])
+                for point in trajectories
+                if "latitude" in point and "longitude" in point
+            ]
+
+            if positions:
+                source_region = estimate_source_region(positions)
+
         return {
             "event_id": event_id,
             "detection": {
@@ -72,4 +68,5 @@ class BacktrackEnsemble:
                 "time": detection_time.isoformat(),
             },
             "simulation": result,
+            "source_region": source_region,
         }
