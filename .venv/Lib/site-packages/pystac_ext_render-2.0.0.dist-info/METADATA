@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: pystac-ext-render
+Version: 2.0.0
+Summary: Render extension for PySTAC
+Project-URL: Documentation, https://pystac.readthedocs.io
+Project-URL: Repository, https://github.com/stac-utils/pystac
+Project-URL: Issues, https://github.com/stac-utils/pystac/issues
+Project-URL: Changelog, https://github.com/stac-utils/pystac/blob/main/CHANGELOG.md
+Project-URL: Discussions, https://github.com/radiantearth/stac-spec/discussions/categories/stac-software
+License: Apache-2.0
+Keywords: STAC,catalog,imagery,pystac,raster,render
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Requires-Dist: pystac-core
+Description-Content-Type: text/markdown
+
+# pystac-ext-render
+
+[PySTAC](https://pypi.org/project/pystac/) extension package for the [Render Extension](https://github.com/stac-extensions/render).
+This extension provides fields for describing visualization parameters for assets, including rescaling, color maps, expressions, and tile matrix set configurations.
+
+## Supported versions
+
+- [v2.0.0](https://stac-extensions.github.io/render/v2.0.0/schema.json)
+
+## Versioning
+
+This package's version corresponds to the version of the extension specification it targets.
+When we release updates to the package code without changing the target extension version, we use [post releases](https://packaging.python.org/en/latest/discussions/versioning/#post-releases), e.g. `2.0.0.post1`.

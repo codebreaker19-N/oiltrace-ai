@@ -1,0 +1,6 @@
+[console_scripts]
+hodograph = opendrift.scripts.hodograph:main
+opendrift_animate = opendrift.scripts.opendrift_animate:main
+opendrift_gui = opendrift.scripts.opendrift_gui:main
+opendrift_plot = opendrift.scripts.opendrift_plot:main
+readerinfo = opendrift.scripts.readerinfo:main
