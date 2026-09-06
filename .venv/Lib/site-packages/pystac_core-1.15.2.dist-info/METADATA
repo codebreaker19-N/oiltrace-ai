@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: pystac-core
+Version: 1.15.2
+Summary: Core functionality for PySTAC without extensions. Most users will want to use pystac, not this package
+Project-URL: Documentation, https://pystac.readthedocs.io
+Project-URL: Repository, https://github.com/stac-utils/pystac
+Project-URL: Issues, https://github.com/stac-utils/pystac/issues
+Project-URL: Changelog, https://github.com/stac-utils/pystac/blob/main/CHANGELOG.md
+Project-URL: Discussions, https://github.com/radiantearth/stac-spec/discussions/categories/stac-software
+Author-email: Rob Emanuele <rdemanuele@gmail.com>, Jon Duckworth <duckontheweb@gmail.com>
+Maintainer-email: Pete Gadomski <pete.gadomski@gmail.com>
+License: Apache-2.0
+Keywords: STAC,catalog,imagery,pystac,raster
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Requires-Dist: python-dateutil>=2.7.0
