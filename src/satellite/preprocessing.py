@@ -1,5 +1,8 @@
-import numpy as np
-import rasterio
+﻿import numpy as np
+try:
+    import rasterio
+except ImportError:
+    rasterio = None
 
 
 def load_sar_image(path):
