@@ -131,8 +131,9 @@ def run_backward_drift(
     seed_lat = latitude
     if polygon_coords and len(polygon_coords) >= 3:
         poly_arr = np.array(polygon_coords)
-        seed_lon = float(np.mean(poly_arr[:, 0]))
-        seed_lat = float(np.mean(poly_arr[:, 1]))
+        if np.all(np.abs(poly_arr[:, 1]) <= 90.0) and np.all(np.abs(poly_arr[:, 0]) <= 180.0):
+            seed_lon = float(np.mean(poly_arr[:, 0]))
+            seed_lat = float(np.mean(poly_arr[:, 1]))
 
     model.seed_elements(
         lon=seed_lon,

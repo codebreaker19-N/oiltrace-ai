@@ -5,6 +5,10 @@ Data models and serialization contracts for OilTrace-AI Ocean & Drift Engine (M3
 Defines standard Pydantic models for backward (hindcast) and forward (forecast)
 simulations, origin search windows for AIS correlation (M4), and GeoJSON outputs
 for the FastAPI backend (M5) and React/Leaflet dashboard (M6).
+
+Seamlessly ingests and retains upstream metadata from:
+- M1 (Nidhi - AI/ML): Look-alike classification ('oil' vs 'look-alike') & confidence
+- M2 (Neha - Satellite): Image ID, shape morphology features, and mask geometries.
 """
 
 from datetime import datetime
@@ -73,12 +77,21 @@ class DriftResult(BaseModel):
     Serves as the standardized handoff artifact between M3 and teammates M4, M5, M6.
     """
     spill_id: str = Field(default="spill_001", description="Unique spill identifier")
+    image_id: Optional[str] = Field(default=None, description="Satellite image identifier from M2 (Neha)")
     detection_time: datetime
     detection_lat: float
     detection_lon: float
     spill_area_km2: Optional[float] = None
     duration_backward_hours: int = 24
     duration_forward_hours: int = 24
+
+    # M1 (Nidhi - AI/ML) Integration Metadata
+    is_oil_spill: bool = Field(default=True, description="Classification from M1 ('oil' vs 'look-alike')")
+    classification_confidence: Optional[float] = Field(default=None, description="M1 AI confidence score")
+    estimated_age_hours: Optional[float] = Field(default=None, description="Weathering/physical age proxy in hours")
+
+    # M2 (Neha - Satellite) Shape Features
+    shape_features: Dict[str, Any] = Field(default_factory=dict, description="M2 morphology features (aspect_ratio, compactness, extent, solidity)")
 
     backward_trajectory: List[TrajectoryPoint] = Field(default_factory=list)
     forward_trajectory: List[TrajectoryPoint] = Field(default_factory=list)
@@ -98,14 +111,20 @@ class DriftResult(BaseModel):
         """
         features: List[Dict[str, Any]] = []
 
-        # 1. Detection Point Feature
+        # 1. Detection Point Feature (Enhanced with M1 and M2 metadata)
         features.append({
             "type": "Feature",
             "properties": {
                 "layer": "detection_point",
                 "spill_id": self.spill_id,
+                "image_id": self.image_id,
                 "timestamp": self.detection_time.isoformat(),
                 "label": "Spill Detection Centroid",
+                "is_oil_spill": self.is_oil_spill,
+                "classification_confidence": self.classification_confidence,
+                "area_km2": self.spill_area_km2,
+                "estimated_age_hours": self.estimated_age_hours,
+                "shape_features": self.shape_features,
             },
             "geometry": {
                 "type": "Point",
@@ -177,6 +196,8 @@ class DriftResult(BaseModel):
         return {
             "type": "FeatureCollection",
             "spill_id": self.spill_id,
+            "image_id": self.image_id,
+            "is_oil_spill": self.is_oil_spill,
             "features": features,
         }
 
