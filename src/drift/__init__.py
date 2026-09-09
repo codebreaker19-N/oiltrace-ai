@@ -20,7 +20,11 @@ from src.drift.ocean_data.wind import (
 )
 from src.drift.simulation.backward import run_backward_drift
 from src.drift.simulation.forward import run_forward_drift
-from src.drift.pipeline import run_drift_pipeline
+from src.drift.pipeline import (
+    run_drift_pipeline,
+    run_pipeline_from_satellite_output,
+    infer_weathering_age,
+)
 
 __all__ = [
     "DriftResult",
@@ -36,4 +40,6 @@ __all__ = [
     "run_backward_drift",
     "run_forward_drift",
     "run_drift_pipeline",
+    "run_pipeline_from_satellite_output",
+    "infer_weathering_age",
 ]
