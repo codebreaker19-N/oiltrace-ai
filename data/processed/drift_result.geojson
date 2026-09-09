@@ -1,0 +1,436 @@
+{
+  "type": "FeatureCollection",
+  "spill_id": "spill_palsar_0",
+  "image_id": "palsar_0",
+  "is_oil_spill": true,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "detection_point",
+        "spill_id": "spill_palsar_0",
+        "image_id": "palsar_0",
+        "timestamp": "2025-01-02T00:00:00",
+        "label": "Spill Detection Centroid",
+        "is_oil_spill": true,
+        "classification_confidence": 0.965,
+        "area_km2": 0.085,
+        "estimated_age_hours": 18.0,
+        "shape_features": {
+          "area_pixels": 850.0,
+          "aspect_ratio": 2.8,
+          "compactness": 0.42,
+          "extent": 0.68,
+          "solidity": 0.71
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.50004530313333,
+          7.499095350099512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "backward_trajectory",
+        "color": "#FF4500",
+        "description": "Hindcast Origin Track (Backward Drift)",
+        "num_steps": 19
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.501971,
+            7.498399
+          ],
+          [
+            72.505625,
+            7.482388
+          ],
+          [
+            72.508738,
+            7.466911
+          ],
+          [
+            72.51204,
+            7.450527
+          ],
+          [
+            72.514852,
+            7.434713
+          ],
+          [
+            72.517495,
+            7.418062
+          ],
+          [
+            72.519696,
+            7.40212
+          ],
+          [
+            72.522296,
+            7.385399
+          ],
+          [
+            72.523909,
+            7.369031
+          ],
+          [
+            72.526086,
+            7.352424
+          ],
+          [
+            72.526812,
+            7.335593
+          ],
+          [
+            72.528156,
+            7.318867
+          ],
+          [
+            72.528847,
+            7.301717
+          ],
+          [
+            72.53028,
+            7.284971
+          ],
+          [
+            72.531191,
+            7.267831
+          ],
+          [
+            72.532483,
+            7.250891
+          ],
+          [
+            72.53366,
+            7.233683
+          ],
+          [
+            72.535313,
+            7.216193
+          ],
+          [
+            72.536538,
+            7.199812
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "origin_search_window",
+        "window_id": 1,
+        "start_time": "2025-01-01T21:00:00",
+        "end_time": "2025-01-02T00:00:00",
+        "radius_km": 2.86,
+        "confidence": 0.95,
+        "color": "#DC143C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.47628,
+              7.42484
+            ],
+            [
+              72.53773,
+              7.42484
+            ],
+            [
+              72.53773,
+              7.52409
+            ],
+            [
+              72.47628,
+              7.52409
+            ],
+            [
+              72.47628,
+              7.42484
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "origin_search_window",
+        "window_id": 2,
+        "start_time": "2025-01-01T17:00:00",
+        "end_time": "2025-01-01T20:00:00",
+        "radius_km": 3.53,
+        "confidence": 0.95,
+        "color": "#DC143C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.48317,
+              7.35371
+            ],
+            [
+              72.55398,
+              7.35371
+            ],
+            [
+              72.55398,
+              7.4664
+            ],
+            [
+              72.48317,
+              7.4664
+            ],
+            [
+              72.48317,
+              7.35371
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "origin_search_window",
+        "window_id": 3,
+        "start_time": "2025-01-01T13:00:00",
+        "end_time": "2025-01-01T16:00:00",
+        "radius_km": 3.77,
+        "confidence": 0.95,
+        "color": "#DC143C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.49008,
+              7.28504
+            ],
+            [
+              72.56198,
+              7.28504
+            ],
+            [
+              72.56198,
+              7.40286
+            ],
+            [
+              72.49008,
+              7.40286
+            ],
+            [
+              72.49008,
+              7.28504
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "origin_search_window",
+        "window_id": 4,
+        "start_time": "2025-01-01T09:00:00",
+        "end_time": "2025-01-01T12:00:00",
+        "radius_km": 4.3,
+        "confidence": 0.95,
+        "color": "#DC143C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.49021,
+              7.21225
+            ],
+            [
+              72.57112,
+              7.21225
+            ],
+            [
+              72.57112,
+              7.34036
+            ],
+            [
+              72.49021,
+              7.34036
+            ],
+            [
+              72.49021,
+              7.21225
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "origin_search_window",
+        "window_id": 5,
+        "start_time": "2025-01-01T06:00:00",
+        "end_time": "2025-01-01T08:00:00",
+        "radius_km": 4.31,
+        "confidence": 0.95,
+        "color": "#DC143C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.49492,
+              7.16107
+            ],
+            [
+              72.57528,
+              7.16107
+            ],
+            [
+              72.57528,
+              7.27243
+            ],
+            [
+              72.49492,
+              7.27243
+            ],
+            [
+              72.49492,
+              7.16107
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "forward_trajectory",
+        "color": "#00BFFF",
+        "description": "Forecast Drift Track (Forward Drift)",
+        "stranding_risk": false,
+        "num_steps": 25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.502198,
+            7.498218
+          ],
+          [
+            72.498544,
+            7.514235
+          ],
+          [
+            72.498488,
+            7.513909
+          ],
+          [
+            72.49798,
+            7.514307
+          ],
+          [
+            72.497697,
+            7.513934
+          ],
+          [
+            72.497309,
+            7.514221
+          ],
+          [
+            72.497113,
+            7.513618
+          ],
+          [
+            72.496343,
+            7.513711
+          ],
+          [
+            72.496421,
+            7.513375
+          ],
+          [
+            72.4958,
+            7.513203
+          ],
+          [
+            72.496499,
+            7.513167
+          ],
+          [
+            72.496486,
+            7.512948
+          ],
+          [
+            72.497084,
+            7.513143
+          ],
+          [
+            72.496935,
+            7.512943
+          ],
+          [
+            72.497286,
+            7.513143
+          ],
+          [
+            72.497255,
+            7.51314
+          ],
+          [
+            72.497347,
+            7.513427
+          ],
+          [
+            72.497029,
+            7.514086
+          ],
+          [
+            72.497231,
+            7.513733
+          ],
+          [
+            72.49693,
+            7.514048
+          ],
+          [
+            72.496964,
+            7.513831
+          ],
+          [
+            72.49714,
+            7.514027
+          ],
+          [
+            72.496653,
+            7.513804
+          ],
+          [
+            72.496515,
+            7.513813
+          ],
+          [
+            72.495992,
+            7.513849
+          ]
+        ]
+      }
+    }
+  ]
+}
