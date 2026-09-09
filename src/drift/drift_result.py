@@ -7,8 +7,8 @@ simulations, origin search windows for AIS correlation (M4), and GeoJSON outputs
 for the FastAPI backend (M5) and React/Leaflet dashboard (M6).
 
 Seamlessly ingests and retains upstream metadata from:
-- M1 (Nidhi - AI/ML): Look-alike classification ('oil' vs 'look-alike') & confidence
-- M2 (Neha - Satellite): Image ID, shape morphology features, and mask geometries.
+- M1 (AI/ML): Look-alike classification ('oil' vs 'look-alike') & confidence
+- M2 (Satellite): Image ID, shape morphology features, and mask geometries.
 """
 
 from datetime import datetime
