@@ -3,8 +3,8 @@ pipeline.py
 End-to-end integration pipeline for the OilTrace-AI Drift Engine (M3).
 
 Coordinates backward hindcasting and forward forecasting by integrating inputs
-from Satellite AI/ML (M1 - Nidhi, M2 - Neha) and generating downstream contracts for
-AIS Attribution (M4 - Priya), FastAPI Backend (M5 - Prachi), and Leaflet Dashboard (M6 - Mansi).
+from Satellite AI/ML (M1, M2) and generating downstream contracts for
+AIS Attribution (M4), FastAPI Backend (M5), and Leaflet Dashboard (M6).
 """
 
 from datetime import datetime, timezone
